@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-export function TwitterFollowCard({userName, name}){
+export function TwitterFollowCard({userName, name, initialIsFollowing}){
 
-    const [isFollowing, setIsFollowing] = useState(false)
-    const imageSrc =`https://unavatar.io/twitter/${userName}`
+    const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
+    const imageSrc =`https://unavatar.io/${userName}`
     const addAt = (userName) => `@${userName}`
     const text = isFollowing ? 'Siguiendo' : 'Seguir'
     const buttonClassName = 

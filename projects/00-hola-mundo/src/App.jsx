@@ -1,11 +1,14 @@
+import { useState } from 'react'
 import './App.css'
 import { TwitterFollowCard } from './TwitterFollowCard'
 export function App(){
+    const [name, setName] = useState('midudev')
     return (
         <section className="App">
             <TwitterFollowCard 
-            userName="midudev" 
-            name="Miguel Angel Duran" />
+            userName={name} 
+            name="Miguel Angel Duran"
+            initialIsFollowing={true} />
             <TwitterFollowCard 
             userName="omidnikrah" 
             name="Miguel Angel Duran" />
@@ -15,6 +18,10 @@ export function App(){
             <TwitterFollowCard 
             userName="ChemJimGar" 
             name="Jose Maria Jimenez" />
+
+            <button onClick={()=> setName('pedromichel')}>
+                Cambio nombre
+            </button>
         </section>
         
     )
